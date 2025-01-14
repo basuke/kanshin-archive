@@ -1,0 +1,14 @@
+# ignore data
+data/
+
+# ignore drizzle scheme info
+drizzle/
+
+# ignore npm packages
+node_modules/
+
+# ignore achievements
+*.db
+
+# forget about strict versions
+pnpm-lock.yaml
