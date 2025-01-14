@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "npx drizzle-kit push --verbose",
+    "db:import": "tsx src/to-sqlite.ts"
   },
   "keywords": [],
   "author": "",
