@@ -26,7 +26,7 @@ aws dynamodb scan --table-name <table_name> --output json > data/<table_name>.du
 Because the json exported from DynamoDB is too huge to be handled in JavaScript, we need to reduce the size of json file by simplifying the content. The following is the command to simplify the json:
 
 ```
-python3 src/simplify-json.py data/<table_name>-dump.json > data/<table_name>.json
+python3 tools/simplify-json.py data/<table_name>-dump.json > data/<table_name>.json
 ```
 
 At this point, simplified json files are ready to be imported to sqlite at data directory.

@@ -1,11 +1,28 @@
-# ignore drizzle scheme info
-drizzle/
+test-results
+node_modules
 
-# ignore npm packages
-node_modules/
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
 
-# ignore achievements
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# SQLite
 *.db
-
-# forget about strict versions
-pnpm-lock.yaml
+*.sql
