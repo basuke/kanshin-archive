@@ -11,7 +11,7 @@ import {
     Diaries,
     DiaryImages,
     DiaryComments,
-} from './db/schema';
+} from '../src/db/schema';
 import { readFileSync } from 'fs';
 
 const db = drizzle(process.env.DB_FILE_NAME!);
@@ -140,7 +140,7 @@ async function main() {
         };
     });
 
-    const categoryValues = [];
+    const categoryValues = [] as any[];
     categories.forEach(async (name, id) => categoryValues.push({id, name}));
     await chunkedInsert(Categories, categoryValues);
 
@@ -170,7 +170,7 @@ async function main() {
             name: attribute.name,
             value: attribute.value,
         })));
-    }, []);
+    }, [] as any[]);
     await chunkedInsert(KeywordAttributes, attributes);
 
     // keyword comments ============
@@ -183,7 +183,7 @@ async function main() {
             date: comment.date,
             comment: comment.text,
         })));
-    }, []);
+    }, [] as any[]);
     await chunkedInsert(KeywordComments, keywordComments);
 
     // diaries ============
@@ -208,7 +208,7 @@ async function main() {
             position: index,
             url,
         })));
-    }, []);
+    }, [] as any[]);
 
     await chunkedInsert(DiaryImages, diaryImages);
 
@@ -222,7 +222,7 @@ async function main() {
             date: comment.date,
             comment: comment.text,
         })));
-    }, []);
+    }, [] as any[]);
 
     await chunkedInsert(DiaryComments, diaryComments);
 }
